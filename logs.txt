@@ -1,0 +1,475 @@
+pip install -r
+
+Usage:   
+  pip install [options] <requirement specifier> [package-index-options] ...
+  pip install [options] -r <requirements file> [package-index-options] ...
+  pip install [options] [-e] <vcs project url> ...
+  pip install [options] [-e] <local project path> ...
+  pip install [options] <archive url/path> ...
+
+-r option requires 1 argument
+[exit=2]
+╭─  omaestro174  ~/devOPs/Azure cloud  native   00:39:25
+╰─ ❯ pip install -r requirements.txt 
+error: externally-managed-environment
+
+× This environment is externally managed
+╰─> To install Python packages system-wide, try 'pacman -S
+    python-xyz', where xyz is the package you are trying to
+    install.
+    
+    If you wish to install a non-Arch-packaged Python package,
+    create a virtual environment using 'python -m venv path/to/venv'.
+    Then use path/to/venv/bin/python and path/to/venv/bin/pip.
+    
+    If you wish to install a non-Arch packaged Python application,
+    it may be easiest to use 'pipx install xyz', which will manage a
+    virtual environment for you. Make sure you have python-pipx
+    installed via pacman.
+
+note: If you believe this is a mistake, please contact your Python installation or OS distribution provider. You can override this, at the risk of breaking your Python installation or OS, by passing --break-system-packages.
+hint: See PEP 668 for the detailed specification.
+[exit=1]
+╭─  omaestro174  ~/devOPs/Azure cloud  native   00:39:33
+╰─ ❯ python -m venv venv
+╭─  omaestro174  ~/devOPs/Azure cloud  native   00:40:05
+╰─ ❯ pip install -r requirements.txt 
+error: externally-managed-environment
+
+× This environment is externally managed
+╰─> To install Python packages system-wide, try 'pacman -S
+    python-xyz', where xyz is the package you are trying to
+    install.
+    
+    If you wish to install a non-Arch-packaged Python package,
+    create a virtual environment using 'python -m venv path/to/venv'.
+    Then use path/to/venv/bin/python and path/to/venv/bin/pip.
+    
+    If you wish to install a non-Arch packaged Python application,
+    it may be easiest to use 'pipx install xyz', which will manage a
+    virtual environment for you. Make sure you have python-pipx
+    installed via pacman.
+
+note: If you believe this is a mistake, please contact your Python installation or OS distribution provider. You can override this, at the risk of breaking your Python installation or OS, by passing --break-system-packages.
+hint: See PEP 668 for the detailed specification.
+[exit=1]
+╭─  omaestro174  ~/devOPs/Azure cloud  native   00:40:22
+╰─ ❯ source venv/bin/activate
+╭─  omaestro174  ~/devOPs/Azure cloud  native     /home/omaestro174/devOPs/Azure cloud  native/venv   00:40:31
+╰─ ❯ pip install -r requirements.txt 
+Collecting streamlit (from -r requirements.txt (line 1))
+  Downloading streamlit-1.44.1-py3-none-any.whl.metadata (8.9 kB)
+Collecting azure-storage-blob (from -r requirements.txt (line 2))
+  Downloading azure_storage_blob-12.25.1-py3-none-any.whl.metadata (26 kB)
+ERROR: Ignored the following versions that require a different python version: 0.55.2 Requires-Python <3.5
+ERROR: Could not find a version that satisfies the requirement pymsql (from versions: none)
+
+[notice] A new release of pip is available: 24.3.1 -> 25.0.1
+[notice] To update, run: pip install --upgrade pip
+ERROR: No matching distribution found for pymsql
+[exit=1]
+╭─  omaestro174  ~/devOPs/Azure cloud  native     /home/omaestro174/devOPs/Azure cloud  native/venv   00:40:39
+╰─ ❯ pip install -r requirements.txt 
+Collecting streamlit (from -r requirements.txt (line 1))
+  Using cached streamlit-1.44.1-py3-none-any.whl.metadata (8.9 kB)
+Collecting azure-storage-blob (from -r requirements.txt (line 2))
+  Using cached azure_storage_blob-12.25.1-py3-none-any.whl.metadata (26 kB)
+Collecting pymssql (from -r requirements.txt (line 3))
+  Downloading pymssql-2.3.4-cp313-cp313-manylinux_2_28_x86_64.whl.metadata (4.5 kB)
+Collecting dotenv (from -r requirements.txt (line 4))
+  Downloading dotenv-0.9.9-py2.py3-none-any.whl.metadata (279 bytes)
+Collecting altair<6,>=4.0 (from streamlit->-r requirements.txt (line 1))
+  Downloading altair-5.5.0-py3-none-any.whl.metadata (11 kB)
+Collecting blinker<2,>=1.0.0 (from streamlit->-r requirements.txt (line 1))
+  Using cached blinker-1.9.0-py3-none-any.whl.metadata (1.6 kB)
+Collecting cachetools<6,>=4.0 (from streamlit->-r requirements.txt (line 1))
+  Downloading cachetools-5.5.2-py3-none-any.whl.metadata (5.4 kB)
+Collecting click<9,>=7.0 (from streamlit->-r requirements.txt (line 1))
+  Using cached click-8.1.8-py3-none-any.whl.metadata (2.3 kB)
+Collecting numpy<3,>=1.23 (from streamlit->-r requirements.txt (line 1))
+  Downloading numpy-2.2.4-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (62 kB)
+Collecting packaging<25,>=20 (from streamlit->-r requirements.txt (line 1))
+  Using cached packaging-24.2-py3-none-any.whl.metadata (3.2 kB)
+Collecting pandas<3,>=1.4.0 (from streamlit->-r requirements.txt (line 1))
+  Downloading pandas-2.2.3-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (89 kB)
+Collecting pillow<12,>=7.1.0 (from streamlit->-r requirements.txt (line 1))
+  Downloading pillow-11.2.1-cp313-cp313-manylinux_2_28_x86_64.whl.metadata (8.9 kB)
+Collecting protobuf<6,>=3.20 (from streamlit->-r requirements.txt (line 1))
+  Downloading protobuf-5.29.4-cp38-abi3-manylinux2014_x86_64.whl.metadata (592 bytes)
+Collecting pyarrow>=7.0 (from streamlit->-r requirements.txt (line 1))
+  Downloading pyarrow-19.0.1-cp313-cp313-manylinux_2_28_x86_64.whl.metadata (3.3 kB)
+Collecting requests<3,>=2.27 (from streamlit->-r requirements.txt (line 1))
+  Using cached requests-2.32.3-py3-none-any.whl.metadata (4.6 kB)
+Collecting tenacity<10,>=8.1.0 (from streamlit->-r requirements.txt (line 1))
+  Downloading tenacity-9.1.2-py3-none-any.whl.metadata (1.2 kB)
+Collecting toml<2,>=0.10.1 (from streamlit->-r requirements.txt (line 1))
+  Downloading toml-0.10.2-py2.py3-none-any.whl.metadata (7.1 kB)
+Collecting typing-extensions<5,>=4.4.0 (from streamlit->-r requirements.txt (line 1))
+  Downloading typing_extensions-4.13.2-py3-none-any.whl.metadata (3.0 kB)
+Collecting watchdog<7,>=2.1.5 (from streamlit->-r requirements.txt (line 1))
+  Downloading watchdog-6.0.0-py3-none-manylinux2014_x86_64.whl.metadata (44 kB)
+Collecting gitpython!=3.1.19,<4,>=3.0.7 (from streamlit->-r requirements.txt (line 1))
+  Downloading GitPython-3.1.44-py3-none-any.whl.metadata (13 kB)
+Collecting pydeck<1,>=0.8.0b4 (from streamlit->-r requirements.txt (line 1))
+  Downloading pydeck-0.9.1-py2.py3-none-any.whl.metadata (4.1 kB)
+Collecting tornado<7,>=6.0.3 (from streamlit->-r requirements.txt (line 1))
+  Downloading tornado-6.4.2-cp38-abi3-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (2.5 kB)
+Collecting azure-core>=1.30.0 (from azure-storage-blob->-r requirements.txt (line 2))
+  Downloading azure_core-1.33.0-py3-none-any.whl.metadata (42 kB)
+Collecting cryptography>=2.1.4 (from azure-storage-blob->-r requirements.txt (line 2))
+  Downloading cryptography-44.0.2-cp39-abi3-manylinux_2_34_x86_64.whl.metadata (5.7 kB)
+Collecting isodate>=0.6.1 (from azure-storage-blob->-r requirements.txt (line 2))
+  Downloading isodate-0.7.2-py3-none-any.whl.metadata (11 kB)
+Collecting python-dotenv (from dotenv->-r requirements.txt (line 4))
+  Downloading python_dotenv-1.1.0-py3-none-any.whl.metadata (24 kB)
+Collecting jinja2 (from altair<6,>=4.0->streamlit->-r requirements.txt (line 1))
+  Downloading jinja2-3.1.6-py3-none-any.whl.metadata (2.9 kB)
+Collecting jsonschema>=3.0 (from altair<6,>=4.0->streamlit->-r requirements.txt (line 1))
+  Downloading jsonschema-4.23.0-py3-none-any.whl.metadata (7.9 kB)
+Collecting narwhals>=1.14.2 (from altair<6,>=4.0->streamlit->-r requirements.txt (line 1))
+  Downloading narwhals-1.34.1-py3-none-any.whl.metadata (9.2 kB)
+Collecting six>=1.11.0 (from azure-core>=1.30.0->azure-storage-blob->-r requirements.txt (line 2))
+  Downloading six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)
+Collecting cffi>=1.12 (from cryptography>=2.1.4->azure-storage-blob->-r requirements.txt (line 2))
+  Downloading cffi-1.17.1-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (1.5 kB)
+Collecting gitdb<5,>=4.0.1 (from gitpython!=3.1.19,<4,>=3.0.7->streamlit->-r requirements.txt (line 1))
+  Downloading gitdb-4.0.12-py3-none-any.whl.metadata (1.2 kB)
+Collecting python-dateutil>=2.8.2 (from pandas<3,>=1.4.0->streamlit->-r requirements.txt (line 1))
+  Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl.metadata (8.4 kB)
+Collecting pytz>=2020.1 (from pandas<3,>=1.4.0->streamlit->-r requirements.txt (line 1))
+  Downloading pytz-2025.2-py2.py3-none-any.whl.metadata (22 kB)
+Collecting tzdata>=2022.7 (from pandas<3,>=1.4.0->streamlit->-r requirements.txt (line 1))
+  Downloading tzdata-2025.2-py2.py3-none-any.whl.metadata (1.4 kB)
+Collecting charset-normalizer<4,>=2 (from requests<3,>=2.27->streamlit->-r requirements.txt (line 1))
+  Using cached charset_normalizer-3.4.1-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (35 kB)
+Collecting idna<4,>=2.5 (from requests<3,>=2.27->streamlit->-r requirements.txt (line 1))
+  Using cached idna-3.10-py3-none-any.whl.metadata (10 kB)
+Collecting urllib3<3,>=1.21.1 (from requests<3,>=2.27->streamlit->-r requirements.txt (line 1))
+  Downloading urllib3-2.4.0-py3-none-any.whl.metadata (6.5 kB)
+Collecting certifi>=2017.4.17 (from requests<3,>=2.27->streamlit->-r requirements.txt (line 1))
+  Using cached certifi-2025.1.31-py3-none-any.whl.metadata (2.5 kB)
+Collecting pycparser (from cffi>=1.12->cryptography>=2.1.4->azure-storage-blob->-r requirements.txt (line 2))
+  Downloading pycparser-2.22-py3-none-any.whl.metadata (943 bytes)
+Collecting smmap<6,>=3.0.1 (from gitdb<5,>=4.0.1->gitpython!=3.1.19,<4,>=3.0.7->streamlit->-r requirements.txt (line 1))
+  Downloading smmap-5.0.2-py3-none-any.whl.metadata (4.3 kB)
+Collecting MarkupSafe>=2.0 (from jinja2->altair<6,>=4.0->streamlit->-r requirements.txt (line 1))
+  Downloading MarkupSafe-3.0.2-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.0 kB)
+Collecting attrs>=22.2.0 (from jsonschema>=3.0->altair<6,>=4.0->streamlit->-r requirements.txt (line 1))
+  Downloading attrs-25.3.0-py3-none-any.whl.metadata (10 kB)
+Collecting jsonschema-specifications>=2023.03.6 (from jsonschema>=3.0->altair<6,>=4.0->streamlit->-r requirements.txt (line 1))
+  Downloading jsonschema_specifications-2024.10.1-py3-none-any.whl.metadata (3.0 kB)
+Collecting referencing>=0.28.4 (from jsonschema>=3.0->altair<6,>=4.0->streamlit->-r requirements.txt (line 1))
+  Downloading referencing-0.36.2-py3-none-any.whl.metadata (2.8 kB)
+Collecting rpds-py>=0.7.1 (from jsonschema>=3.0->altair<6,>=4.0->streamlit->-r requirements.txt (line 1))
+  Downloading rpds_py-0.24.0-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.1 kB)
+Downloading streamlit-1.44.1-py3-none-any.whl (9.8 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9.8/9.8 MB 1.9 MB/s eta 0:00:00
+Downloading azure_storage_blob-12.25.1-py3-none-any.whl (406 kB)
+Downloading pymssql-2.3.4-cp313-cp313-manylinux_2_28_x86_64.whl (4.8 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.8/4.8 MB 4.3 MB/s eta 0:00:00
+Downloading dotenv-0.9.9-py2.py3-none-any.whl (1.9 kB)
+Downloading altair-5.5.0-py3-none-any.whl (731 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 731.2/731.2 kB 5.2 MB/s eta 0:00:00
+Downloading azure_core-1.33.0-py3-none-any.whl (207 kB)
+Using cached blinker-1.9.0-py3-none-any.whl (8.5 kB)
+Downloading cachetools-5.5.2-py3-none-any.whl (10 kB)
+Using cached click-8.1.8-py3-none-any.whl (98 kB)
+Downloading cryptography-44.0.2-cp39-abi3-manylinux_2_34_x86_64.whl (4.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.2/4.2 MB 5.5 MB/s eta 0:00:00
+Downloading GitPython-3.1.44-py3-none-any.whl (207 kB)
+Downloading isodate-0.7.2-py3-none-any.whl (22 kB)
+Downloading numpy-2.2.4-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (16.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.1/16.1 MB 7.8 MB/s eta 0:00:00
+Using cached packaging-24.2-py3-none-any.whl (65 kB)
+Downloading pandas-2.2.3-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (12.7 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.7/12.7 MB 7.5 MB/s eta 0:00:00
+Downloading pillow-11.2.1-cp313-cp313-manylinux_2_28_x86_64.whl (4.6 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.6/4.6 MB 7.5 MB/s eta 0:00:00
+Downloading protobuf-5.29.4-cp38-abi3-manylinux2014_x86_64.whl (319 kB)
+Downloading pyarrow-19.0.1-cp313-cp313-manylinux_2_28_x86_64.whl (42.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 42.1/42.1 MB 8.1 MB/s eta 0:00:00
+Downloading pydeck-0.9.1-py2.py3-none-any.whl (6.9 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.9/6.9 MB 6.7 MB/s eta 0:00:00
+Using cached requests-2.32.3-py3-none-any.whl (64 kB)
+Downloading tenacity-9.1.2-py3-none-any.whl (28 kB)
+Downloading toml-0.10.2-py2.py3-none-any.whl (16 kB)
+Downloading tornado-6.4.2-cp38-abi3-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (437 kB)
+Downloading typing_extensions-4.13.2-py3-none-any.whl (45 kB)
+Downloading watchdog-6.0.0-py3-none-manylinux2014_x86_64.whl (79 kB)
+Downloading python_dotenv-1.1.0-py3-none-any.whl (20 kB)
+Using cached certifi-2025.1.31-py3-none-any.whl (166 kB)
+╭─  omaestro174  ~/devOPs/Azure cloud  native     /home/omaestro174/devOPs/Azure cloud  native/venv   00:42:24
+╰─ ❯ streamlit main.py 
+Usage: streamlit [OPTIONS] COMMAND [ARGS]...
+Try 'streamlit --help' for help.
+
+Error: No such command 'main.py'.
+[exit=2]
+╭─  omaestro174  ~/devOPs/Azure cloud  native     /home/omaestro174/devOPs/Azure cloud  native/venv   00:43:04
+╰─ ❯ streamlit main.py 
+Usage: streamlit [OPTIONS] COMMAND [ARGS]...
+Try 'streamlit --help' for help.
+
+Error: No such command 'main.py'.
+[exit=2]
+╭─  omaestro174  ~/devOPs/Azure cloud  native     /home/omaestro174/devOPs/Azure cloud  native/venv   00:43:28
+╰─ ❯ streamlit run main.py 
+
+      👋 Welcome to Streamlit!
+
+      If you’d like to receive helpful onboarding emails, news, offers, promotions,
+      and the occasional swag, please enter your email address below. Otherwise,
+      leave this field blank.
+
+      Email:  omaestro174@taguardado.net
+
+  You can find our privacy policy at https://streamlit.io/privacy-policy
+
+  Summary:
+  - This open source library collects usage statistics.
+  - We cannot see and do not store information contained inside Streamlit apps,
+    such as text, charts, images, etc.
+  - Telemetry data is stored in servers in the United States.
+  - If you'd like to opt out, add the following to ~/.streamlit/config.toml,
+    creating that file if necessary:
+
+    [browser]
+    gatherUsageStats = false
+
+
+  You can now view your Streamlit app in your browser.
+
+  Local URL: http://localhost:8501
+  Network URL: http://192.168.55.234:8501
+
+2025-04-13 00:44:06.589 Uncaught app execution
+Traceback (most recent call last):
+  File "/home/omaestro174/devOPs/Azure cloud  native/venv/lib/python3.13/site-packages/streamlit/runtime/scriptrunner/exec_code.py", line 121, in exec_func_with_error_handling
+    result = func()
+  File "/home/omaestro174/devOPs/Azure cloud  native/venv/lib/python3.13/site-packages/streamlit/runtime/scriptrunner/script_runner.py", line 640, in code_to_exec
+    exec(code, module.__dict__)
+    ~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/omaestro174/devOPs/Azure cloud  native/main.py", line 6, in <module>
+    import jason
+ModuleNotFoundError: No module named 'jason'
+^C  Stopping...
+╭─  omaestro174  ~/devOPs/Azure cloud  native     /home/omaestro174/devOPs/Azure cloud  native/venv   00:44:47
+╰─ ❯ streamlit run main.py 
+
+  You can now view your Streamlit app in your browser.
+
+  Local URL: http://localhost:8501
+  Network URL: http://192.168.55.234:8501
+
+2025-04-13 00:44:55.471 Uncaught app execution
+Traceback (most recent call last):
+  File "/home/omaestro174/devOPs/Azure cloud  native/venv/lib/python3.13/site-packages/streamlit/runtime/scriptrunner/exec_code.py", line 121, in exec_func_with_error_handling
+    result = func()
+  File "/home/omaestro174/devOPs/Azure cloud  native/venv/lib/python3.13/site-packages/streamlit/runtime/scriptrunner/script_runner.py", line 640, in code_to_exec
+    exec(code, module.__dict__)
+    ~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/omaestro174/devOPs/Azure cloud  native/main.py", line 8, in <module>
+    load_dotenv()
+    ^^^^^^^^^^^
+NameError: name 'load_dotenv' is not defined
+^S^[[A^C  Stopping...
+╭─  omaestro174  ~/devOPs/Azure cloud  native     /home/omaestro174/devOPs/Azure cloud  native/venv   00:45:50
+╰─ ❯ pip install -r requirements.txt 
+Requirement already satisfied: streamlit in ./venv/lib/python3.13/site-packages (from -r requirements.txt (line 1)) (1.44.1)
+Requirement already satisfied: azure-storage-blob in ./venv/lib/python3.13/site-packages (from -r requirements.txt (line 2)) (12.25.1)
+Requirement already satisfied: pymssql in ./venv/lib/python3.13/site-packages (from -r requirements.txt (line 3)) (2.3.4)
+Requirement already satisfied: dotenv in ./venv/lib/python3.13/site-packages (from -r requirements.txt (line 4)) (0.9.9)
+Requirement already satisfied: altair<6,>=4.0 in ./venv/lib/python3.13/site-packages (from streamlit->-r requirements.txt (line 1)) (5.5.0)
+Requirement already satisfied: blinker<2,>=1.0.0 in ./venv/lib/python3.13/site-packages (from streamlit->-r requirements.txt (line 1)) (1.9.0)
+Requirement already satisfied: cachetools<6,>=4.0 in ./venv/lib/python3.13/site-packages (from streamlit->-r requirements.txt (line 1)) (5.5.2)
+Requirement already satisfied: click<9,>=7.0 in ./venv/lib/python3.13/site-packages (from streamlit->-r requirements.txt (line 1)) (8.1.8)
+Requirement already satisfied: numpy<3,>=1.23 in ./venv/lib/python3.13/site-packages (from streamlit->-r requirements.txt (line 1)) (2.2.4)
+Requirement already satisfied: packaging<25,>=20 in ./venv/lib/python3.13/site-packages (from streamlit->-r requirements.txt (line 1)) (24.2)
+Requirement already satisfied: pandas<3,>=1.4.0 in ./venv/lib/python3.13/site-packages (from streamlit->-r requirements.txt (line 1)) (2.2.3)
+Requirement already satisfied: pillow<12,>=7.1.0 in ./venv/lib/python3.13/site-packages (from streamlit->-r requirements.txt (line 1)) (11.2.1)
+Requirement already satisfied: protobuf<6,>=3.20 in ./venv/lib/python3.13/site-packages (from streamlit->-r requirements.txt (line 1)) (5.29.4)
+Requirement already satisfied: pyarrow>=7.0 in ./venv/lib/python3.13/site-packages (from streamlit->-r requirements.txt (line 1)) (19.0.1)
+Requirement already satisfied: requests<3,>=2.27 in ./venv/lib/python3.13/site-packages (from streamlit->-r requirements.txt (line 1)) (2.32.3)
+Requirement already satisfied: tenacity<10,>=8.1.0 in ./venv/lib/python3.13/site-packages (from streamlit->-r requirements.txt (line 1)) (9.1.2)
+Requirement already satisfied: toml<2,>=0.10.1 in ./venv/lib/python3.13/site-packages (from streamlit->-r requirements.txt (line 1)) (0.10.2)
+Requirement already satisfied: typing-extensions<5,>=4.4.0 in ./venv/lib/python3.13/site-packages (from streamlit->-r requirements.txt (line 1)) (4.13.2)
+Requirement already satisfied: watchdog<7,>=2.1.5 in ./venv/lib/python3.13/site-packages (from streamlit->-r requirements.txt (line 1)) (6.0.0)
+Requirement already satisfied: gitpython!=3.1.19,<4,>=3.0.7 in ./venv/lib/python3.13/site-packages (from streamlit->-r requirements.txt (line 1)) (3.1.44)
+Requirement already satisfied: pydeck<1,>=0.8.0b4 in ./venv/lib/python3.13/site-packages (from streamlit->-r requirements.txt (line 1)) (0.9.1)
+Requirement already satisfied: tornado<7,>=6.0.3 in ./venv/lib/python3.13/site-packages (from streamlit->-r requirements.txt (line 1)) (6.4.2)
+Requirement already satisfied: azure-core>=1.30.0 in ./venv/lib/python3.13/site-packages (from azure-storage-blob->-r requirements.txt (line 2)) (1.33.0)
+Requirement already satisfied: cryptography>=2.1.4 in ./venv/lib/python3.13/site-packages (from azure-storage-blob->-r requirements.txt (line 2)) (44.0.2)
+Requirement already satisfied: isodate>=0.6.1 in ./venv/lib/python3.13/site-packages (from azure-storage-blob->-r requirements.txt (line 2)) (0.7.2)
+Requirement already satisfied: python-dotenv in ./venv/lib/python3.13/site-packages (from dotenv->-r requirements.txt (line 4)) (1.1.0)
+Requirement already satisfied: jinja2 in ./venv/lib/python3.13/site-packages (from altair<6,>=4.0->streamlit->-r requirements.txt (line 1)) (3.1.6)
+Requirement already satisfied: jsonschema>=3.0 in ./venv/lib/python3.13/site-packages (from altair<6,>=4.0->streamlit->-r requirements.txt (line 1)) (4.23.0)
+Requirement already satisfied: narwhals>=1.14.2 in ./venv/lib/python3.13/site-packages (from altair<6,>=4.0->streamlit->-r requirements.txt (line 1)) (1.34.1)
+Requirement already satisfied: six>=1.11.0 in ./venv/lib/python3.13/site-packages (from azure-core>=1.30.0->azure-storage-blob->-r requirements.txt (line 2)) (1.17.0)
+Requirement already satisfied: cffi>=1.12 in ./venv/lib/python3.13/site-packages (from cryptography>=2.1.4->azure-storage-blob->-r requirements.txt (line 2)) (1.17.1)
+Requirement already satisfied: gitdb<5,>=4.0.1 in ./venv/lib/python3.13/site-packages (from gitpython!=3.1.19,<4,>=3.0.7->streamlit->-r requirements.txt (line 1)) (4.0.12)
+Requirement already satisfied: python-dateutil>=2.8.2 in ./venv/lib/python3.13/site-packages (from pandas<3,>=1.4.0->streamlit->-r requirements.txt (line 1)) (2.9.0.post0)
+Requirement already satisfied: pytz>=2020.1 in ./venv/lib/python3.13/site-packages (from pandas<3,>=1.4.0->streamlit->-r requirements.txt (line 1)) (2025.2)
+Requirement already satisfied: tzdata>=2022.7 in ./venv/lib/python3.13/site-packages (from pandas<3,>=1.4.0->streamlit->-r requirements.txt (line 1)) (2025.2)
+Requirement already satisfied: charset-normalizer<4,>=2 in ./venv/lib/python3.13/site-packages (from requests<3,>=2.27->streamlit->-r requirements.txt (line 1)) (3.4.1)
+Requirement already satisfied: idna<4,>=2.5 in ./venv/lib/python3.13/site-packages (from requests<3,>=2.27->streamlit->-r requirements.txt (line 1)) (3.10)
+Requirement already satisfied: urllib3<3,>=1.21.1 in ./venv/lib/python3.13/site-packages (from requests<3,>=2.27->streamlit->-r requirements.txt (line 1)) (2.4.0)
+Requirement already satisfied: certifi>=2017.4.17 in ./venv/lib/python3.13/site-packages (from requests<3,>=2.27->streamlit->-r requirements.txt (line 1)) (2025.1.31)
+Requirement already satisfied: pycparser in ./venv/lib/python3.13/site-packages (from cffi>=1.12->cryptography>=2.1.4->azure-storage-blob->-r requirements.txt (line 2)) (2.22)
+Requirement already satisfied: smmap<6,>=3.0.1 in ./venv/lib/python3.13/site-packages (from gitdb<5,>=4.0.1->gitpython!=3.1.19,<4,>=3.0.7->streamlit->-r requirements.txt (line 1)) (5.0.2)
+Requirement already satisfied: MarkupSafe>=2.0 in ./venv/lib/python3.13/site-packages (from jinja2->altair<6,>=4.0->streamlit->-r requirements.txt (line 1)) (3.0.2)
+Requirement already satisfied: attrs>=22.2.0 in ./venv/lib/python3.13/site-packages (from jsonschema>=3.0->altair<6,>=4.0->streamlit->-r requirements.txt (line 1)) (25.3.0)
+Requirement already satisfied: jsonschema-specifications>=2023.03.6 in ./venv/lib/python3.13/site-packages (from jsonschema>=3.0->altair<6,>=4.0->streamlit->-r requirements.txt (line 1)) (2024.10.1)
+Requirement already satisfied: referencing>=0.28.4 in ./venv/lib/python3.13/site-packages (from jsonschema>=3.0->altair<6,>=4.0->streamlit->-r requirements.txt (line 1)) (0.36.2)
+Requirement already satisfied: rpds-py>=0.7.1 in ./venv/lib/python3.13/site-packages (from jsonschema>=3.0->altair<6,>=4.0->streamlit->-r requirements.txt (line 1)) (0.24.0)
+
+[notice] A new release of pip is available: 24.3.1 -> 25.0.1
+[notice] To update, run: pip install --upgrade pip
+╭─  omaestro174  ~/devOPs/Azure cloud  native     /home/omaestro174/devOPs/Azure cloud  native/venv   00:45:53
+╰─ ❯ pip install --upgrade pip
+Requirement already satisfied: pip in ./venv/lib/python3.13/site-packages (24.3.1)
+Collecting pip
+  Using cached pip-25.0.1-py3-none-any.whl.metadata (3.7 kB)
+Using cached pip-25.0.1-py3-none-any.whl (1.8 MB)
+Installing collected packages: pip
+  Attempting uninstall: pip
+    Found existing installation: pip 24.3.1
+    Uninstalling pip-24.3.1:
+      Successfully uninstalled pip-24.3.1
+Successfully installed pip-25.0.1
+╭─  omaestro174  ~/devOPs/Azure cloud  native     /home/omaestro174/devOPs/Azure cloud  native/venv   00:46:06
+╰─ ❯ pip install -r requirements.txt 
+Requirement already satisfied: streamlit in ./venv/lib/python3.13/site-packages (from -r requirements.txt (line 1)) (1.44.1)
+Requirement already satisfied: azure-storage-blob in ./venv/lib/python3.13/site-packages (from -r requirements.txt (line 2)) (12.25.1)
+Requirement already satisfied: pymssql in ./venv/lib/python3.13/site-packages (from -r requirements.txt (line 3)) (2.3.4)
+Requirement already satisfied: dotenv in ./venv/lib/python3.13/site-packages (from -r requirements.txt (line 4)) (0.9.9)
+Requirement already satisfied: altair<6,>=4.0 in ./venv/lib/python3.13/site-packages (from streamlit->-r requirements.txt (line 1)) (5.5.0)
+Requirement already satisfied: blinker<2,>=1.0.0 in ./venv/lib/python3.13/site-packages (from streamlit->-r requirements.txt (line 1)) (1.9.0)
+Requirement already satisfied: cachetools<6,>=4.0 in ./venv/lib/python3.13/site-packages (from streamlit->-r requirements.txt (line 1)) (5.5.2)
+Requirement already satisfied: click<9,>=7.0 in ./venv/lib/python3.13/site-packages (from streamlit->-r requirements.txt (line 1)) (8.1.8)
+Requirement already satisfied: numpy<3,>=1.23 in ./venv/lib/python3.13/site-packages (from streamlit->-r requirements.txt (line 1)) (2.2.4)
+Requirement already satisfied: packaging<25,>=20 in ./venv/lib/python3.13/site-packages (from streamlit->-r requirements.txt (line 1)) (24.2)
+Requirement already satisfied: pandas<3,>=1.4.0 in ./venv/lib/python3.13/site-packages (from streamlit->-r requirements.txt (line 1)) (2.2.3)
+Requirement already satisfied: pillow<12,>=7.1.0 in ./venv/lib/python3.13/site-packages (from streamlit->-r requirements.txt (line 1)) (11.2.1)
+Requirement already satisfied: protobuf<6,>=3.20 in ./venv/lib/python3.13/site-packages (from streamlit->-r requirements.txt (line 1)) (5.29.4)
+Requirement already satisfied: pyarrow>=7.0 in ./venv/lib/python3.13/site-packages (from streamlit->-r requirements.txt (line 1)) (19.0.1)
+Requirement already satisfied: requests<3,>=2.27 in ./venv/lib/python3.13/site-packages (from streamlit->-r requirements.txt (line 1)) (2.32.3)
+Requirement already satisfied: tenacity<10,>=8.1.0 in ./venv/lib/python3.13/site-packages (from streamlit->-r requirements.txt (line 1)) (9.1.2)
+Requirement already satisfied: toml<2,>=0.10.1 in ./venv/lib/python3.13/site-packages (from streamlit->-r requirements.txt (line 1)) (0.10.2)
+Requirement already satisfied: typing-extensions<5,>=4.4.0 in ./venv/lib/python3.13/site-packages (from streamlit->-r requirements.txt (line 1)) (4.13.2)
+Requirement already satisfied: watchdog<7,>=2.1.5 in ./venv/lib/python3.13/site-packages (from streamlit->-r requirements.txt (line 1)) (6.0.0)
+Requirement already satisfied: gitpython!=3.1.19,<4,>=3.0.7 in ./venv/lib/python3.13/site-packages (from streamlit->-r requirements.txt (line 1)) (3.1.44)
+Requirement already satisfied: pydeck<1,>=0.8.0b4 in ./venv/lib/python3.13/site-packages (from streamlit->-r requirements.txt (line 1)) (0.9.1)
+Requirement already satisfied: tornado<7,>=6.0.3 in ./venv/lib/python3.13/site-packages (from streamlit->-r requirements.txt (line 1)) (6.4.2)
+Requirement already satisfied: azure-core>=1.30.0 in ./venv/lib/python3.13/site-packages (from azure-storage-blob->-r requirements.txt (line 2)) (1.33.0)
+Requirement already satisfied: cryptography>=2.1.4 in ./venv/lib/python3.13/site-packages (from azure-storage-blob->-r requirements.txt (line 2)) (44.0.2)
+Requirement already satisfied: isodate>=0.6.1 in ./venv/lib/python3.13/site-packages (from azure-storage-blob->-r requirements.txt (line 2)) (0.7.2)
+Requirement already satisfied: python-dotenv in ./venv/lib/python3.13/site-packages (from dotenv->-r requirements.txt (line 4)) (1.1.0)
+Requirement already satisfied: jinja2 in ./venv/lib/python3.13/site-packages (from altair<6,>=4.0->streamlit->-r requirements.txt (line 1)) (3.1.6)
+Requirement already satisfied: jsonschema>=3.0 in ./venv/lib/python3.13/site-packages (from altair<6,>=4.0->streamlit->-r requirements.txt (line 1)) (4.23.0)
+Requirement already satisfied: narwhals>=1.14.2 in ./venv/lib/python3.13/site-packages (from altair<6,>=4.0->streamlit->-r requirements.txt (line 1)) (1.34.1)
+Requirement already satisfied: six>=1.11.0 in ./venv/lib/python3.13/site-packages (from azure-core>=1.30.0->azure-storage-blob->-r requirements.txt (line 2)) (1.17.0)
+Requirement already satisfied: cffi>=1.12 in ./venv/lib/python3.13/site-packages (from cryptography>=2.1.4->azure-storage-blob->-r requirements.txt (line 2)) (1.17.1)
+Requirement already satisfied: gitdb<5,>=4.0.1 in ./venv/lib/python3.13/site-packages (from gitpython!=3.1.19,<4,>=3.0.7->streamlit->-r requirements.txt (line 1)) (4.0.12)
+Requirement already satisfied: python-dateutil>=2.8.2 in ./venv/lib/python3.13/site-packages (from pandas<3,>=1.4.0->streamlit->-r requirements.txt (line 1)) (2.9.0.post0)
+Requirement already satisfied: pytz>=2020.1 in ./venv/lib/python3.13/site-packages (from pandas<3,>=1.4.0->streamlit->-r requirements.txt (line 1)) (2025.2)
+Requirement already satisfied: tzdata>=2022.7 in ./venv/lib/python3.13/site-packages (from pandas<3,>=1.4.0->streamlit->-r requirements.txt (line 1)) (2025.2)
+Requirement already satisfied: charset-normalizer<4,>=2 in ./venv/lib/python3.13/site-packages (from requests<3,>=2.27->streamlit->-r requirements.txt (line 1)) (3.4.1)
+Requirement already satisfied: idna<4,>=2.5 in ./venv/lib/python3.13/site-packages (from requests<3,>=2.27->streamlit->-r requirements.txt (line 1)) (3.10)
+Requirement already satisfied: urllib3<3,>=1.21.1 in ./venv/lib/python3.13/site-packages (from requests<3,>=2.27->streamlit->-r requirements.txt (line 1)) (2.4.0)
+Requirement already satisfied: certifi>=2017.4.17 in ./venv/lib/python3.13/site-packages (from requests<3,>=2.27->streamlit->-r requirements.txt (line 1)) (2025.1.31)
+Requirement already satisfied: pycparser in ./venv/lib/python3.13/site-packages (from cffi>=1.12->cryptography>=2.1.4->azure-storage-blob->-r requirements.txt (line 2)) (2.22)
+Requirement already satisfied: smmap<6,>=3.0.1 in ./venv/lib/python3.13/site-packages (from gitdb<5,>=4.0.1->gitpython!=3.1.19,<4,>=3.0.7->streamlit->-r requirements.txt (line 1)) (5.0.2)
+Requirement already satisfied: MarkupSafe>=2.0 in ./venv/lib/python3.13/site-packages (from jinja2->altair<6,>=4.0->streamlit->-r requirements.txt (line 1)) (3.0.2)
+Requirement already satisfied: attrs>=22.2.0 in ./venv/lib/python3.13/site-packages (from jsonschema>=3.0->altair<6,>=4.0->streamlit->-r requirements.txt (line 1)) (25.3.0)
+Requirement already satisfied: jsonschema-specifications>=2023.03.6 in ./venv/lib/python3.13/site-packages (from jsonschema>=3.0->altair<6,>=4.0->streamlit->-r requirements.txt (line 1)) (2024.10.1)
+Requirement already satisfied: referencing>=0.28.4 in ./venv/lib/python3.13/site-packages (from jsonschema>=3.0->altair<6,>=4.0->streamlit->-r requirements.txt (line 1)) (0.36.2)
+Requirement already satisfied: rpds-py>=0.7.1 in ./venv/lib/python3.13/site-packages (from jsonschema>=3.0->altair<6,>=4.0->streamlit->-r requirements.txt (line 1)) (0.24.0)
+╭─  omaestro174  ~/devOPs/Azure cloud  native     /home/omaestro174/devOPs/Azure cloud  native/venv   00:46:15
+╰─ ❯ streamlit run main.py 
+
+  You can now view your Streamlit app in your browser.
+
+  Local URL: http://localhost:8501
+  Network URL: http://192.168.55.234:8501
+
+2025-04-13 00:46:22.151 Uncaught app execution
+Traceback (most recent call last):
+  File "/home/omaestro174/devOPs/Azure cloud  native/venv/lib/python3.13/site-packages/streamlit/runtime/scriptrunner/exec_code.py", line 121, in exec_func_with_error_handling
+    result = func()
+  File "/home/omaestro174/devOPs/Azure cloud  native/venv/lib/python3.13/site-packages/streamlit/runtime/scriptrunner/script_runner.py", line 640, in code_to_exec
+╭─  omaestro174  ~/devOPs/Azure cloud  native     /home/omaestro174/devOPs/Azure cloud  native/venv   00:53:00
+╰─ ❯ streamlit run main.py 
+
+  You can now view your Streamlit app in your browser.
+
+  Local URL: http://localhost:8501
+  Network URL: http://192.168.55.234:8501
+
+2025-04-13 01:14:52.026 Received event for non-watched file: /home/omaestro174/devOPs/Azure cloud  native/main.py
+2025-04-13 01:14:52.026 Received event for non-watched file: /home/omaestro174/devOPs/Azure cloud  native/main.py
+^C  Stopping...
+╭─  omaestro174  ~/devOPs/Azure cloud  native     /home/omaestro174/devOPs/Azure cloud  native/venv   01:14:59
+╰─ ❯ streamlit run main.py 
+
+  You can now view your Streamlit app in your browser.
+
+  Local URL: http://localhost:8501
+  Network URL: http://192.168.55.234:8501
+
+2025-04-13 01:17:32.785 Received event for non-watched file: /home/omaestro174/devOPs/Azure cloud  native/main.py
+^C  Stopping...
+╭─  omaestro174  ~/devOPs/Azure cloud  native     /home/omaestro174/devOPs/Azure cloud  native/venv   01:17:35
+╰─ ❯ streamlit run main.py 
+
+  You can now view your Streamlit app in your browser.
+
+  Local URL: http://localhost:8501
+  Network URL: http://192.168.55.234:8501
+
+^C  Stopping...
+╭─  omaestro174  ~/devOPs/Azure cloud  native     /home/omaestro174/devOPs/Azure cloud  native/venv   01:22:38
+╰─ ❯ streamlit run main.py 
+
+  You can now view your Streamlit app in your browser.
+
+  Local URL: http://localhost:8501
+  Network URL: http://192.168.55.234:8501
+
+2025-04-13 01:25:08.521 Received event for non-watched file: /home/omaestro174/devOPs/Azure cloud  native/main.py
+^C  Stopping...
+╭─  omaestro174  ~/devOPs/Azure cloud  native     /home/omaestro174/devOPs/Azure cloud  native/venv   01:25:14
+╰─ ❯ streamlit run main.py 
+
+  You can now view your Streamlit app in your browser.
+
+  Local URL: http://localhost:8501
+  Network URL: http://192.168.55.234:8501
+
+2025-04-13 01:26:07.958 Uncaught app execution
+Traceback (most recent call last):
+  File "/home/omaestro174/devOPs/Azure cloud  native/venv/lib/python3.13/site-packages/streamlit/runtime/scriptrunner/exec_code.py", line 121, in exec_func_with_error_handling
+    result = func()
+  File "/home/omaestro174/devOPs/Azure cloud  native/venv/lib/python3.13/site-packages/streamlit/runtime/scriptrunner/script_runner.py", line 640, in code_to_exec
+    exec(code, module.__dict__)
+    ~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/omaestro174/devOPs/Azure cloud  native/main.py", line 117, in <module>
+    list_produtos_screen()
+    ~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/omaestro174/devOPs/Azure cloud  native/main.py", line 87, in list_produtos_screen
+    st.markdown(f"### {product['nome']}")
+                       ~~~~~~~^^^^^^^^
+TypeError: tuple indices must be integers or slices, not str
+2025-04-13 01:27:29.077 Uncaught app execution
+Traceback (most recent call last):
+  File "/home/omaestro174/devOPs/Azure cloud  native/venv/lib/python3.13/site-packages/streamlit/runtime/scriptrunner/exec_code.py", line 121, in exec_func_with_error_handling
+    result = func()
+  File "/home/omaestro174/devOPs/Azure cloud  native/venv/lib/python3.13/site-packages/streamlit/runtime/scriptrunner/script_runner.py", line 640, in code_to_exec
+    exec(code, module.__dict__)
+    ~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/omaestro174/devOPs/Azure cloud  native/main.py", line 117, in <module>
+    list_produtos_screen()
+    ~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/omaestro174/devOPs/Azure cloud  native/main.py", line 87, in list_produtos_screen
+    st.markdown(f"### {product['nome']}")
+                       ~~~~~~~^^^^^^^^
+TypeError: tuple indices must be integers or slices, not str
